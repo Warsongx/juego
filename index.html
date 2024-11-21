@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Piedra, Papel o Tijeras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="login-register-container">
+      <form id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="login-username" placeholder="Usuario">
+        <input type="password" id="login-password" placeholder="Contraseña">
+        <button type="button" onclick="app.handleLogin()">Iniciar Sesión</button>
+        <p onclick="app.showRegisterForm()">¿No tienes cuenta? Regístrate</p>
+      </form>
+
+      <form id="register-form" style="display: none;">
+        <h2>Registro</h2>
+        <input type="text" id="register-username" placeholder="Usuario">
+        <input type="password" id="register-password" placeholder="Contraseña">
+        <button type="button" onclick="app.handleRegister()">Registrar</button>
+        <p onclick="app.showLoginForm()">¿Ya tienes cuenta? Inicia sesión</p>
+      </form>
+    </div>
+
+    <div id="game-container" style="display: none;">
+      <h2>¡Bienvenido al juego!</h2>
+      <p>Elige tu movimiento:</p>
+      <button onclick="app.playGame('piedra')">Piedra</button>
+      <button onclick="app.playGame('papel')">Papel</button>
+      <button onclick="app.playGame('tijeras')">Tijeras</button>
+      <button onclick="app.playGame('lagarto')">Lagarto</button>
+      <button onclick="app.playGame('spock')">Spock</button>
+        
+      <p id="computadora-resultado"></p>
+      <p id="game-result"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
